@@ -1,10 +1,9 @@
 # Node.js CI/CD Pipeline
 
-A simple Node.js application demonstrating CI/CD automation using GitHub Actions and Docker.
+## Project Overview
 
-## Objective
-
-Automate the process of testing the Node.js application, building a Docker image, and pushing the image to Docker Hub.
+A Node.js application demonstrating an automated CI/CD pipeline using
+GitHub Actions and Docker.
 
 ## Technologies Used
 
@@ -12,67 +11,61 @@ Automate the process of testing the Node.js application, building a Docker image
 - Express.js
 - Docker
 - Docker Hub
-- GitHub
 - GitHub Actions
+- Git
 
 ## Application
 
-The application provides:
+### Home Endpoint
 
-- `/` — Main application page
-- `/health` — Health check endpoint
+<img width="1408" height="881" alt="Screenshot 2026-10-01 at 8 59 51 PM" src="https://github.com/user-attachments/assets/87ed855a-c48f-43c2-8340-14976c3030d5" />
+
+### Health Endpoint
+
+<img width="1408" height="881" alt="Screenshot 2026-10-01 at 9 00 05 PM" src="https://github.com/user-attachments/assets/d882d8ce-60b8-458b-a312-feaa2e397f45" />
 
 ## CI/CD Pipeline
 
-The pipeline will run automatically when code is pushed to the `main` branch.
+Every push to the `main` branch triggers the GitHub Actions workflow.
 
-```text
-Push to main
-     ↓
-Checkout code
-     ↓
-Setup Node.js
-     ↓
-Install dependencies
-     ↓
-Run tests
-     ↓
-Build Docker image
-     ↓
-Push Docker image to Docker Hub
+The pipeline:
+
+1. Checks out the source code
+2. Sets up Node.js
+3. Installs dependencies
+4. Runs tests
+5. Logs into Docker Hub
+6. Builds the Docker image
+7. Pushes the image to Docker Hub
+
+### Successful Pipeline
+
+<img width="1408" height="881" alt="Screenshot 2026-10-01 at 9 00 35 PM" src="https://github.com/user-attachments/assets/fefd84b6-c06a-4181-9d1e-d3b64141d322" />
 
 
-Docker
+## Docker Image
 
-Build locally:
+Docker Hub:
 
-docker build -t nodejs-demo-app .
+`ayush0shahir/nodejs-demo-app:latest`
 
-Run locally:
+### Docker Hub Image
 
-docker run -p 3000:3000 nodejs-demo-app
+<img width="1408" height="881" alt="Screenshot 2026-10-01 at 8 22 24 PM" src="https://github.com/user-attachments/assets/ddf4460c-e74c-4468-b819-116882bf5cdf" />
 
-Open:
 
-http://localhost:3000
-
-Save it.
-
----
-
-# 3. Check your folder
-
-Your project should now look like:
+## Project Structure
 
 ```text
 nodejs-demo-app/
-│
-├── node_modules/
+├── .github/
+│   └── workflows/
+│       └── main.yml
 ├── app.js
 ├── app.test.js
+├── Dockerfile
 ├── package.json
 ├── package-lock.json
-├── Dockerfile
 ├── .dockerignore
 ├── .gitignore
 └── README.md
