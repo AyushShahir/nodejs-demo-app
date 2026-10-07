@@ -1,11 +1,11 @@
-# Node.js CI/CD Pipeline
+# 🚀 Node.js CI/CD Pipeline
 
-## Project Overview
+## 🎯 Project Overview
 
 A Node.js application demonstrating an automated CI/CD pipeline using
 GitHub Actions and Docker.
 
-## Technologies Used
+## ⚒️ Technologies Used
 
 - Node.js
 - Express.js
@@ -14,7 +14,7 @@ GitHub Actions and Docker.
 - GitHub Actions
 - Git
 
-## Application
+## 📱 Application
 
 ### Home Endpoint
 
